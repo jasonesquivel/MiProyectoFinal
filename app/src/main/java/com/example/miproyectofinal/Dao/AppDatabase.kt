@@ -7,7 +7,10 @@ import com.example.miproyectofinal.Modelo.Usuario
 
 @Database(entities = [Usuario::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
+
+    abstract fun comidaDao(): ComidaDao
     abstract fun usuarioDao(): UsuarioDao
+
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
